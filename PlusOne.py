@@ -4,8 +4,7 @@ class Solution(object):
         multi_nine = False
         k = 0
         for i in range(len(digits) - 1, -1, -1):
-            print
-            digits[i]
+            print(digits[i])
             if digits[i] != 9 and nine_found == False:
                 digits[i] += 1
                 return digits
@@ -31,3 +30,17 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
+
+
+class Solution(object):
+    def plusOne(self, digits):
+        number = 0
+        k = 1
+        app = []
+        for i in range(len(digits) - 1, -1, -1):
+            number += digits[i] * k
+            k *= 10
+        number += 1
+        for val in str(number):
+            app.append(val)
+        return app
